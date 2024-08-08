@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+    <style>
+        #canvas-container {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        }   
+        canvas {
+        position: relative;
+        background-color: rgba(0, 0, 0);
+        }
+        #canvas2{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background-color: #6b6b6b;
+        }
+        #Überschrift {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 40px;
+        color: #ff7b00;
+        }
+        #buttons{
+            position: relative;
+            top: 50px;
+            left: 0px;
+        }
+        #copyright{
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            font-size: 24px;
+            color: #ff7b00;
+        }
+        #loading{
+            position: absolute;
+            top: 0px;
+            left: 750px;
+            font-size: 24px;
+            color: #ff7b00;
+        }
+
+    </style>
+</head>
+
+<body onload="fetchButtons" style="background-color: black;">
+        <canvas id="canvas2" width="1910" height="50"></canvas>
+        <div id="Überschrift">Flame Launcher 2.0</div>
+        <div id="copyright">©2024 Flame Launcher</div>
+        <div id= "loading">Loading Buttons...</div>
+        <div id="buttons"></div>
+
+    <script>
+            async function fetchButtons() {
+                const response = await fetch('/buttons');
+                const buttons = await response.json();
+                const buttonsContainer = document.getElementById('buttons');
+                document.getElementById('loading').innerText = "";
+                buttons.forEach(button => {
+                    const btn = document.createElement('button');
+                    btn.style.color = "orange";
+                    btn.textContent = button.Name;
+                    btn.onclick = () => {
+                        fetch('/api/button-click', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ Name: button.Name, Path: button.Path })
+                        });
+                    };
+                    buttonsContainer.appendChild(btn);
+                });
+            }
+
+        fetchButtons();
+    </script>
+</body>
+
+</html>
