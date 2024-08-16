@@ -10,12 +10,18 @@
         "dependencies": {
           "DiscordRichPresence": "1.2.1.24",
           "LibreHardwareMonitorLib": "0.9.3",
-          "Microsoft.Web.WebView2": "1.0.2592.51",
+          "Microsoft.Web.WebView2": "1.0.2651.64",
           "NAudio": "2.2.1",
           "Newtonsoft.Json": "13.0.3",
           "SixLabors.ImageSharp": "3.1.5",
           "System.Formats.Asn1": "8.0.1",
-          "System.Security.Cryptography.Pkcs": "8.0.0"
+          "System.Security.Cryptography.Pkcs": "8.0.0",
+          "WindowsAPICodePack-Shell": "1.1.1",
+          "WindowsAPICodePack-ShellExtensions": "1.1.1",
+          "WindowsAPICodePackShell": "8.0.5",
+          "Microsoft.Web.WebView2.Core": "1.0.2651.64",
+          "Microsoft.Web.WebView2.WinForms": "1.0.2651.64",
+          "Microsoft.Web.WebView2.Wpf": "1.0.2651.64"
         },
         "runtime": {
           "FlameLauncher 2.0.dll": {}
@@ -57,37 +63,23 @@
           }
         }
       },
-      "Microsoft.NETCore.Platforms/5.0.0": {},
-      "Microsoft.Web.WebView2/1.0.2592.51": {
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
-            "assemblyVersion": "1.0.2592.51",
-            "fileVersion": "1.0.2592.51"
-          },
-          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
-            "assemblyVersion": "1.0.2592.51",
-            "fileVersion": "1.0.2592.51"
-          },
-          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
-            "assemblyVersion": "1.0.2592.51",
-            "fileVersion": "1.0.2592.51"
-          }
-        },
+      "Microsoft.NETCore.Platforms/7.0.4": {},
+      "Microsoft.Web.WebView2/1.0.2651.64": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/WebView2Loader.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "1.0.2592.51"
+            "fileVersion": "1.0.2651.64"
           },
           "runtimes/win-x64/native/WebView2Loader.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "1.0.2592.51"
+            "fileVersion": "1.0.2651.64"
           },
           "runtimes/win-x86/native/WebView2Loader.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "1.0.2592.51"
+            "fileVersion": "1.0.2651.64"
           }
         }
       },
@@ -411,7 +403,7 @@
       },
       "System.Security.AccessControl/5.0.0": {
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "5.0.0",
+          "Microsoft.NETCore.Platforms": "7.0.4",
           "System.Security.Principal.Windows": "5.0.0"
         }
       },
@@ -420,7 +412,77 @@
           "System.Formats.Asn1": "8.0.1"
         }
       },
-      "System.Security.Principal.Windows/5.0.0": {}
+      "System.Security.Principal.Windows/5.0.0": {},
+      "WindowsAPICodePack-Core/1.1.1": {
+        "runtime": {
+          "lib/Microsoft.WindowsAPICodePack.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "WindowsAPICodePack-Shell/1.1.1": {
+        "dependencies": {
+          "WindowsAPICodePack-Core": "1.1.1"
+        }
+      },
+      "WindowsAPICodePack-ShellExtensions/1.1.1": {
+        "dependencies": {
+          "WindowsAPICodePack-Shell": "1.1.1"
+        },
+        "runtime": {
+          "lib/Microsoft.WindowsAPICodePack.ShellExtensions.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "WindowsAPICodePackCore/8.0.5": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "7.0.4"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Microsoft.WindowsAPICodePack.Core.dll": {
+            "assemblyVersion": "8.0.5.0",
+            "fileVersion": "8.0.5.0"
+          }
+        }
+      },
+      "WindowsAPICodePackShell/8.0.5": {
+        "dependencies": {
+          "WindowsAPICodePackCore": "8.0.5"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Microsoft.WindowsAPICodePack.Shell.dll": {
+            "assemblyVersion": "8.0.5.0",
+            "fileVersion": "8.0.5.0"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.Core/1.0.2651.64": {
+        "runtime": {
+          "Microsoft.Web.WebView2.Core.dll": {
+            "assemblyVersion": "1.0.2651.64",
+            "fileVersion": "1.0.2651.64"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.WinForms/1.0.2651.64": {
+        "runtime": {
+          "Microsoft.Web.WebView2.WinForms.dll": {
+            "assemblyVersion": "1.0.2651.64",
+            "fileVersion": "1.0.2651.64"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.Wpf/1.0.2651.64": {
+        "runtime": {
+          "Microsoft.Web.WebView2.Wpf.dll": {
+            "assemblyVersion": "1.0.2651.64",
+            "fileVersion": "1.0.2651.64"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -450,19 +512,19 @@
       "path": "librehardwaremonitorlib/0.9.3",
       "hashPath": "librehardwaremonitorlib.0.9.3.nupkg.sha512"
     },
-    "Microsoft.NETCore.Platforms/5.0.0": {
+    "Microsoft.NETCore.Platforms/7.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
-      "path": "microsoft.netcore.platforms/5.0.0",
-      "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
+      "sha512": "sha512-yLEHlNN7O5WiND89r42sepgVwy5W/ZoTiFEdJDV7MHR1lW02LL7Nipz2TD5qM/Kx9W3/k3NP+PAP2qUdOm+leg==",
+      "path": "microsoft.netcore.platforms/7.0.4",
+      "hashPath": "microsoft.netcore.platforms.7.0.4.nupkg.sha512"
     },
-    "Microsoft.Web.WebView2/1.0.2592.51": {
+    "Microsoft.Web.WebView2/1.0.2651.64": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AC9aWCthS2JvddYA1jl4dFpLBW3GsLRInhp5dkcBzaFXsRehfoUN9olIUsrH41eNaNYd7z9NRvmy81aUA5aD1g==",
-      "path": "microsoft.web.webview2/1.0.2592.51",
-      "hashPath": "microsoft.web.webview2.1.0.2592.51.nupkg.sha512"
+      "sha512": "sha512-f5sc/vcAoTCTEW7Nqzp4galAuTRguZViw8ksn+Nx2uskEBPm0/ubzy6gVjvXS/P96jLS89C8T9I0hPc417xpNg==",
+      "path": "microsoft.web.webview2/1.0.2651.64",
+      "hashPath": "microsoft.web.webview2.1.0.2651.64.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/5.0.0": {
       "type": "package",
@@ -638,6 +700,56 @@
       "sha512": "sha512-t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
       "path": "system.security.principal.windows/5.0.0",
       "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
+    },
+    "WindowsAPICodePack-Core/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GoURoQuE7ea7B7q24YRTBfZbsNO7ZtwSyBHbM8zO0ynwfjAGC0bbAmVrDvZ6HbWtqqOt6QTzdmYnj2WJglb5JQ==",
+      "path": "windowsapicodepack-core/1.1.1",
+      "hashPath": "windowsapicodepack-core.1.1.1.nupkg.sha512"
+    },
+    "WindowsAPICodePack-Shell/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CPFamhL3jPo8O6+ErGsLS4LK3DWP5ncxqhbzpPnYkIW9rjatunUij35iTjprbr9mlYR/5Pbguw21MwSmTOKR4g==",
+      "path": "windowsapicodepack-shell/1.1.1",
+      "hashPath": "windowsapicodepack-shell.1.1.1.nupkg.sha512"
+    },
+    "WindowsAPICodePack-ShellExtensions/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DkSEVhbM6tApOz4KWAnpOicItDai1SgJZYTR//pS4eywn/lTKvwTC5R4MD3UTVYNhssPBKM/mPZBK39lhP1Tsg==",
+      "path": "windowsapicodepack-shellextensions/1.1.1",
+      "hashPath": "windowsapicodepack-shellextensions.1.1.1.nupkg.sha512"
+    },
+    "WindowsAPICodePackCore/8.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YT0qgEjMsQ9K7Psb3pQUq9r2Ss4JaKkZr++R7r886UtbETv+BYnAzN7Vzz3BMXAQiHTp4eWwzIp/sND4Z2OGwg==",
+      "path": "windowsapicodepackcore/8.0.5",
+      "hashPath": "windowsapicodepackcore.8.0.5.nupkg.sha512"
+    },
+    "WindowsAPICodePackShell/8.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0De8n3hc19A9H7oSbu2K+Tj9jSO0nLlvLGtN0vQ/3leznHpLe9PlrFvGlIqtDnZnpoXowSduYu1uTPyRXxExEg==",
+      "path": "windowsapicodepackshell/8.0.5",
+      "hashPath": "windowsapicodepackshell.8.0.5.nupkg.sha512"
+    },
+    "Microsoft.Web.WebView2.Core/1.0.2651.64": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.WebView2.WinForms/1.0.2651.64": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.WebView2.Wpf/1.0.2651.64": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

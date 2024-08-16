@@ -12,8 +12,7 @@
         top: 0px;
         }   
         canvas {
-        position: relative;
-        background-color: rgba(0, 0, 0);
+        position: absolute;
         }
         #canvas2{
         position: absolute;
@@ -68,6 +67,7 @@
                     const btn = document.createElement('button');
                     btn.style.color = "orange";
                     btn.textContent = button.Name;
+                    btn.style.backgroundColor = "black";
                     btn.onclick = () => {
                         fetch('/api/button-click', {
                             method: 'POST',
